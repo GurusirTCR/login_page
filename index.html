@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row align-items-center justify-content-center vh-100">
+      <div class="col-md-7">
+        <img src="img/facebook.svg" class="w-50">
+        <h3>Facebook helps you connect and share with the people in your life.</h3>
+      </div>
+      <div class="col-md-5 ">
+        <form class="login-form" id="login" action="#">
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Email address or phone number" 
+            name="email" id="email" required>
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" placeholder="Password"
+             name="password" id="password" required>
+          </div>
+          <p class="text-center" id="invalid"></p>
+          <button type="button" onclick="getInputValue();" class="btn btn-custom btn-lg btn-block mt-3">Login</button>
+
+          <div class="text-center pt-3 pb-3">
+            <a href="#" class="">Forgotten password?</a>
+            <hr>
+            <button type="button" class="btn btn-success btn-lg mt-3">Create New Account</button>
+          </div>
+        </form>
+        <p class="pt-3 text-center text-decoration-none"><b><a class="text-dark" href="#">Create a Page</a></b> for a celebrity, band or business.</p>
+      </div>
+    </div>
+  </div>
+ 
+</body>
+<script>
+  function getInputValue() {
+    var InputEmial = document.getElementById("email").value;
+    var inputPass = document.getElementById("password").value;
+    var uemail = "abc@gmail.com";
+    var upass = "123";
+
+    if (InputEmial == '' || inputPass == '') {
+      document.getElementById("invalid").innerHTML = "Both Fild required";
+    }
+    else {
+      if (uemail == InputEmial && upass == inputPass) {
+        document.getElementById("login").innerHTML = "Welcome to Faceook";
+      }
+      else {
+        document.getElementById("invalid").innerHTML = "Email Or Password invalid";
+      }
+    }
+  }
+</script>
+
+</html>
